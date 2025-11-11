@@ -8,13 +8,45 @@
 <body>
     <p id="bill"></p>
     <script language="javascript" type="text/javascript">
-        var itemName=[rice,sugar,wheat];
-        var price=[30,60,32];
-        var quantity=[];
-        var cost= (price*quantity);
-       console.log(cost);
+       
+var item1 = "Rice";
+var item2 = "Sugar";
+var item3 = "Wheat";
 
+// Prices of items (per kg)
+var priceRice = 60;
+var priceSugar = 45;
+var priceWheat = 55;
 
+// Quantities purchased (in kg)
+var qtyRice = 2;
+var qtySugar = 3;
+var qtyWheat = 4;
+
+// Calculate cost for each item
+var costRice = priceRice * qtyRice;
+var costSugar = priceSugar * qtySugar;
+var costWheat = priceWheat * qtyWheat;
+
+// Display item costs
+console.log("Cost of " + item1 + ": ₹" + costRice);
+console.log("Cost of " + item2 + ": ₹" + costSugar);
+console.log("Cost of " + item3 + ": ₹" + costWheat);
+
+// Calculate total bill
+let totalBill = costRice + costSugar + costWheat;
+console.log("Total Bill: ₹" + totalBill);
+
+// Change quantity of one item (e.g., Rice)
+qtyRice = 3; // customer buys 1 kg more
+
+// Recalculate cost and total
+costRice = priceRice * qtyRice;
+totalBill = costRice + costSugar + costWheat;
+
+// Display updated total
+console.log("Updated quantity of " + item1 + ": " + qtyRice + " kg");
+console.log("Updated Total Bill: ₹" + totalBill);
 
 
     </script>
