@@ -9,28 +9,38 @@
     <script>
         let contact1={
             name:'Aleena',
-            phone: 9898478574
-            mailid:'aleena12@gmail.com'
-            getinfo: function{
+            phone: 9898478574,
+            mailid:'aleena12@gmail.com',
+            getinfo: function(){
                 return  "Name:" +this.name+" "+ "Phone:"+this.phone+" "+"mailid"+this.mailid ;
                         }
         } ;
         let contact2={
             name:'Alan',
-            phone: 9898479574
+            phone: 9898479574,
             mailid:'alan2@gmail.com',
-            getinfo: function{
+            getinfo: function(){
                 return  "Name:" +this.name+" "+ "Phone:"+this.phone+" "+"mailid"+this.mailid ;
         } 
     }
         let contact3={
             name:'Lena',
-            phone: 9890478574
+            phone: 9890478574,
             mailid:'lena7@gmail.com',
-            getinfo: function{
+            getinfo: function(){
                 return  "Name:" +this.name+" "+ "Phone:"+this.phone+" "+"mailid"+this.mailid ;
         } 
     }
+
+
+    function printContactInfo(contact) {
+        console.log(contact.getInfo());
+    }
+
+    printContactInfo(contact1);
+    printContactInfo(contact1);
+    printContactInfo(contact1);
+
     </script>
     
 </body>
