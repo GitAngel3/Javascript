@@ -22,7 +22,7 @@
             getinfo: function(){
                 return  "Name:" +this.name+" "+ "Phone:"+this.phone+" "+"mailid"+this.mailid ;
         } 
-    }
+    };
         let contact3={
             name:'Lena',
             phone: 9890478574,
@@ -30,16 +30,16 @@
             getinfo: function(){
                 return  "Name:" +this.name+" "+ "Phone:"+this.phone+" "+"mailid"+this.mailid ;
         } 
-    }
+    };
 
 
     function printContactInfo(contact) {
-        console.log(contact.getInfo());
+        console.log(contact.getinfo());
     }
 
     printContactInfo(contact1);
-    printContactInfo(contact1);
-    printContactInfo(contact1);
+    printContactInfo(contact2);
+    printContactInfo(contact3);
 
     </script>
     
