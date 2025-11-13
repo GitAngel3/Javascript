@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       // Create the user profile object
+const userProfile = {
+  username: " CoolUser99 ",
+  bio: " I LOVE coding! JavaScript is Great!!! "
+};
+
+// Function to clean and process the user bio
+function cleanUserBio(profile) {
+  // Trim and lowercase
+  const cleanedUsername = profile.username.trim().toLowerCase();
+  let cleanedBio = profile.bio.trim().toLowerCase();
+
+  // Replace all occurrences of "javascript" with "JS"
+  cleanedBio = cleanedBio.replace(/javascript/g, "JS");
+
+  // Count total number of characters in cleaned bio
+  const bioLength = cleanedBio.length;
+
+  // Return the new cleaned object
+  return {
+    username: cleanedUsername,
+    bio: cleanedBio,
+    bioLength: bioLength
+  };
+}
+
+// Call the function and log the result
+const cleanedProfile = cleanUserBio(userProfile);
+console.log(cleanedProfile);
+
+
+
+    </script>
+    
+</body>
+</html>
