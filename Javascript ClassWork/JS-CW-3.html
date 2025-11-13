@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>feedback form</title>
+</head>
+<body>
+    <script>
+        var feedback = "   I loved the FOOD and the service!   ";
+
+// 1. Remove extra spaces at the beginning and end
+feedback = feedback.trim();
+
+// 2. Convert the entire string to lowercase
+feedback = feedback.toLowerCase();
+
+// 3. Replace the word "food" with "ambience"
+feedback = feedback.replace("food", "ambience");
+
+// 4. Find and print the position of the word "service"
+var position = feedback.indexOf("service");
+console.log("Position of 'service':", position);
+
+// 5. Convert the string to an array of words and print the array
+var wordsArray = feedback.split(" ");
+console.log(wordsArray);
+
+    </script>
+    
+</body>
+</html>

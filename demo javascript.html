@@ -1,47 +1,26 @@
 
 
+
+
+
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>library</title>
-</head>
+<html>
 <body>
-    <script>
-    // Create first contact object
-let contact1 = {
-  name: "Alice Johnson",
-  phone: "9876543210",
-  email: "alice@example.com",
 
-  // Method to return full contact info
-  getInfo: function() {
-    return `Name: ${this.name}, Phone: ${this.phone}, Email: ${this.email}`;
-  }
-};
+<p id="demo"></p>
 
-// Create second contact object
-let contact2 = {
-  name: "Bob Smith",
-  phone: "9123456780",
-  email: "bob@example.com",
-
-  // Method to return full contact info
-  getInfo: function() {
-    return `Name: ${this.name}, Phone: ${this.phone}, Email: ${this.email}`;
-  }
-};
-
-// Function to print contact information
-function printContactInfo(contact) {
-  console.log(contact.getInfo());
+<script>
+var str = "Mashup Stack";
+var arr = str.split("");
+var text = "";
+var i;
+for (i = 0; i < arr.length; i++) {
+  text += arr[i] + "<br>"
 }
-
-// Call the function for both contacts
-printContactInfo(contact1);
-printContactInfo(contact2);
-
+document.getElementById("demo").innerHTML = text;
+console.log(arr)
 </script>
+
 </body>
 </html>
