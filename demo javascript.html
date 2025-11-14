@@ -4,22 +4,45 @@
 
 
 
+
 <!DOCTYPE html>
 <html>
 <body>
 
-<p id="demo"></p>
+
+
 
 <script>
-var str = "Mashup Stack";
-var arr = str.split("");
-var text = "";
-var i;
-for (i = 0; i < arr.length; i++) {
-  text += arr[i] + "<br>"
-}
-document.getElementById("demo").innerHTML = text;
-console.log(arr)
+// 1. Generate a random whole number between 1 and 100
+const randomNum = Math.floor(Math.random() * 100) + 1;
+
+// 2. Simulate a user score as a string value
+const userScoreStr = "75";
+
+// 3. Convert the user score string to a number (explicit type conversion)
+const userScore = Number(userScoreStr);
+
+// 4. Show the difference between the random number and user score
+const difference = randomNum - userScore;
+
+// 5. Show the rounded square root of the user score
+const roundedSqrt = Math.round(Math.sqrt(userScore));
+
+// 6. Show the π constant (pi) from JavaScript
+const piValue = Math.PI;
+
+// 7. Convert the string "50" to a number using implicit conversion and multiply by 2
+const implicitConversion = "50" * 2;
+
+// Display results
+console.log("Random number:", randomNum);
+console.log("User score (string):", userScoreStr);
+console.log("User score (number):", userScore);
+console.log("Difference:", difference);
+console.log("Rounded square root of score:", roundedSqrt);
+console.log("π (pi):", piValue);
+console.log('Implicit conversion ("50" * 2):', implicitConversion);
+
 </script>
 
 </body>

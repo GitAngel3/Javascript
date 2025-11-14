@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>statistics widget for a website</title>
+</head>
+<body>
+    <h2>Statistics widget</h2>
+<p>Random whole number between 1 and 100:</p>
+<p id="demo">
+</p>
+ <button onclick="document.getElementById('demo').innerHTML = getRndInteger(1,100)">Click Me</button>
+
+
+<p id="stringvalue"></p>
+<p id="numbervalue"></p>
+
+<script>
+function getRndInteger(min, max) {
+ return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+
+var user_score_string ="75";
+document.getElementById("stringvalue").innerHTML ="user score as a string value:"+ user_score_string;
+
+var user_score_number = Number('75');
+document.getElementById("numbervalue").innerHTML ="User score string to a number using type conversion:"+ user_score_number;
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
