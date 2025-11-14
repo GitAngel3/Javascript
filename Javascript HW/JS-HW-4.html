@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simple game result generator</title>
+</head>
+<body>
+    <h2>
+        Simple game result generator for a beginner-level web game
+    </h2>
+
+    <p>Mystery level:</p>
+    <p id="random"></p>
+    <p id="userScore"></p>
+    <p id="userScoreNumb"></p>
+    
+</body>
+<script>
+    let score = prompt("Enter your score:");
+
+// Convert input to a number
+score = Number(score);
+document.write("Your score is: " + score);
+
+var score_number = Number(score);
+document.getElementById("userScoreNumb").innerHTML ="User score string to a number conversion:"+ score_number;
+
+document.getElementById("random").innerHTML =
+Math.floor(Math.random() * 55) + 1;
+
+
+
+
+</script>
+
+
+</html>
