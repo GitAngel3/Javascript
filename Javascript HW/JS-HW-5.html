@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <!DOCTYPE html>
+<html>
+<head>
+    <title>User Profile Check</title>
+</head>
+<body>
+
+<h2>User Access Check</h2>
+
+<button onclick="checkAccess()">Check Access</button>
+
+<p id="result"></p>
+<p id="ageCheck"></p>
+
+<script>
+// User object
+let user = {
+    name: "Alice",
+    age: 22,
+    isAdmin: true
+};
+
+function checkAccess() {
+    let resultElement = document.getElementById("result");
+    let ageCheckElement = document.getElementById("ageCheck");
+
+    // Check if "age" exists using "in"
+    let hasAge = "age" in user;
+    ageCheckElement.textContent = `"age" in user → ${hasAge}`;
+
+    // Evaluate access using the conditional operator
+    let access = (user.age >= 18 && user.isAdmin) ? "Access Granted" : "Access Denied";
+    resultElement.textContent = access;
+
+    // Delete the age property after the check
+    delete user.age;
+
+    console.log("User object after delete:", user);
+}
+</script>
+
+</body>
+</html>
+
+</body>
+
+</html>

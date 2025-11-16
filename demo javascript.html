@@ -1,49 +1,42 @@
-
-
-
-
-
-
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 <body>
-
-
-
+    <button onclick="processReturn()">Check Return Eligibility</button>
 
 <script>
-// 1. Generate a random whole number between 1 and 100
-const randomNum = Math.floor(Math.random() * 100) + 1;
+function processReturn() {
 
-// 2. Simulate a user score as a string value
-const userScoreStr = "75";
+    // Create the object
+    const order = {
+        itemName: "Smart Watch",
+        isDelivered: true,
+        daysSinceDelivery: 5
+    };
 
-// 3. Convert the user score string to a number (explicit type conversion)
-const userScore = Number(userScoreStr);
+    // Check return eligibility without using if-else
+    const message =
+        (order.isDelivered && order.daysSinceDelivery <= 7)
+        ? "Eligible for Return"
+        : "Return Period Expired";
 
-// 4. Show the difference between the random number and user score
-const difference = randomNum - userScore;
+    document.write(message + "<br>");
 
-// 5. Show the rounded square root of the user score
-const roundedSqrt = Math.round(Math.sqrt(userScore));
+    // Check if itemName exists
+    const hasItemName = "itemName" in order;
+    document.write("itemName exists: " + hasItemName + "<br>");
 
-// 6. Show the π constant (pi) from JavaScript
-const piValue = Math.PI;
+    // Remove a property
+    delete order.daysSinceDelivery;
 
-// 7. Convert the string "50" to a number using implicit conversion and multiply by 2
-const implicitConversion = "50" * 2;
-
-// Display results
-console.log("Random number:", randomNum);
-console.log("User score (string):", userScoreStr);
-console.log("User score (number):", userScore);
-console.log("Difference:", difference);
-console.log("Rounded square root of score:", roundedSqrt);
-console.log("π (pi):", piValue);
-console.log('Implicit conversion ("50" * 2):', implicitConversion);
-
+    document.write("daysSinceDelivery removed: " + ("daysSinceDelivery" in order));
+}
 </script>
 
+    
 </body>
 </html>
