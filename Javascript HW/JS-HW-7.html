@@ -2,11 +2,64 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Event Reminder Tool</title>
 </head>
 <body>
-    <script lang="javascript" type="text/javascript">
+
+    <h2>Web-based event reminder tool</h2>
+
+    <label>Enter a past date:</label>
+    <input type="date" id="pastDate">
+    <button onclick="showDetails()">Check Date</button>
+
+    <h3>Result:</h3>
+    <p id="output"></p>
+
+    <script>
+        function showDetails() {
+            const input = document.getElementById("pastDate").value;
+            if (!input) {
+                document.getElementById("output").innerHTML = "Please select a date.";
+                return;
+            }
+
+            const pastDate = new Date(input);
+            const year = pastDate.getFullYear();
+
+            // Get full month name
+            const monthName = pastDate.toLocaleString("default", { month: "long" });
+
+            const day = pastDate.getDate();
+
+            // Calculate full years passed
+            const today = new Date();
+            let yearsPassed = today.getFullYear() - pastDate.getFullYear();
+
+            // Adjust if the date hasn't occurred yet this year
+            const hasNotOccurred =
+                today.getMonth() < pastDate.getMonth() ||
+                (today.getMonth() === pastDate.getMonth() && today.getDate() < pastDate.getDate());
+
+            if (hasNotOccurred) {
+                yearsPassed--;
+            }
+
+            // Custom message
+            const customMessage =
+                yearsPassed >= 1
+                    ? "It has been more than a year since that date."
+                    : "It has been less than a year since that date.";
+
+            // Output
+            document.getElementById("output").innerHTML =
+                `<strong>Date Entered:</strong> ${day} ${monthName}, ${year}<br>
+                 <strong>Full Years Passed:</strong> ${yearsPassed}<br>
+                 <strong>Message:</strong> ${customMessage}`;
+        }
+    </script>
+
+</body>
+</html>
 
     </script>
     
