@@ -3,47 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online grocery store.</title>
+    <title>Student Result Dashboard</title>
 </head>
 <body>
-    <h2> A simple product listing feature for an online grocery store</h2>
-    <p>You have an array of product names and an array of their prices. Your tasks are:
-Merge the product names and prices into one array in the format: "Product: Apple - Price: 50"
-Display all product entries using a loop.Filter and show only the products with prices greater than 50.
-Add a new product "Watermelon" with price 80 to the list, and then display the updated product list.</p>
-<p>view output in console</p>
+    <h2> Student Result Dashboard</h2>
+    <p>You are working on a simple "Student Result Dashboard" for a school's internal website.
+         You are given an array of
+         student objects where each student has a name and score. Your tasks are:
+        List all student names.Create a new array that shows only the names of students
+         who scored more than 60.Find the total score of all students.
+      Chek if all students passed (score > 35).Check if at least one student scored more than 90.
+      Sort the students by their score in descending order and display their names along with scores.
+</p>
     <script>
-        // Arrays of product names and prices
-let products = ["Apple", "Banana", "Milk", "Bread", "Orange"];
-let prices = [50, 20, 60, 40, 55];
+        function studentDashboard(students) {
+  
+  // 1. List all student names
+  const allNames = students.map(s => s.name);
 
-// 1. Merge into one array in the format: "Product: Apple - Price: 50"
-let productList = [];
+  // 2. Names of students who scored more than 60
+  const above60 = students
+    .filter(s => s.score > 60)
+    .map(s => s.name);
 
-for (let i = 0; i < products.length; i++) {
-    productList.push(`Product: ${products[i]} - Price: ${prices[i]}`);
-}
+  // 3. Total score of all students
+  const totalScore = students.reduce((sum, s) => sum + s.score, 0);
 
-console.log("Merged Product List:");
-for (let item of productList) {
-    console.log(item);
-}
+  // 4. Check if all students passed (score > 35)
+  const allPassed = students.every(s => s.score > 35);
 
-// 2. Filter and show only products with price > 50
-console.log("\nProducts with price greater than 50:");
-for (let i = 0; i < prices.length; i++) {
-    if (prices[i] > 50) {
-        console.log(`Product: ${products[i]} - Price: ${prices[i]}`);
-    }
-}
+  // 5. Check if at least one student scored more than 90
+  const above90 = students.some(s => s.score > 90);
 
-// 3. Add new product "Watermelon" with price 80
-products.push("Watermelon");
-prices.push(80);
+  // 6. Sort students by score (descending)
+  const sorted = [...students].sort((a, b) => b.score - a.score);
 
-console.log("\nUpdated Product List After Adding Watermelon:");
-for (let i = 0; i < products.length; i++) {
-    console.log(`Product: ${products[i]} - Price: ${prices[i]}`);
+  // Display results
+  console.log("All Student Names:", allNames);
+  console.log("Students with score > 60:", above60);
+  console.log("Total Score:", totalScore);
+  console.log("All Passed (score > 35):", allPassed);
+  console.log("At least one scored > 90:", above90);
+  console.log("Sorted by Score (desc):");
+
+  sorted.forEach(s => console.log(`${s.name}: ${s.score}`));
 }
 
     </script>
