@@ -1,40 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
 <body>
-    <button onclick="processReturn()">Check Return Eligibility</button>
+
 
 <script>
-function processReturn() {
-
-    // Create the object
-    const order = {
-        itemName: "Smart Watch",
-        isDelivered: true,
-        daysSinceDelivery: 5
-    };
-
-    // Check return eligibility without using if-else
-    const message =
-        (order.isDelivered && order.daysSinceDelivery <= 7)
-        ? "Eligible for Return"
-        : "Return Period Expired";
-
-    document.write(message + "<br>");
-
-    // Check if itemName exists
-    const hasItemName = "itemName" in order;
-    document.write("itemName exists: " + hasItemName + "<br>");
-
-    // Remove a property
-    delete order.daysSinceDelivery;
-
-    document.write("daysSinceDelivery removed: " + ("daysSinceDelivery" in order));
+    // Function that accepts a friend object
+function showFriendInfo(friend) {
+    console.log("Friend's Name: " + friend.name);
+    console.log("Friend's Age: " + friend.age);
+    console.log("Friend's City: " + friend.city);
 }
+
+// Creating a friend object
+let friend1 = {
+    name: "Rahul",
+    age: 22,
+    city: "Mumbai"
+};
+
+// Calling the function and passing the object
+showFriendInfo(friend1);
+
+
 </script>
 
     

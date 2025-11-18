@@ -3,26 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-</head>
+    <title>Document</title>
 <body>
-    <h2>Birthday tracker</h2>
+     <h2>Birthday tracker</h2>
     <P>Building a simple birthday tracker for Friends</p>
         <p id="bday"></p>
 
-    <script lang="javascript" type="text/javascript">
-        let friend= {
-            name: 'John',
-            dateOfBirth:new Date(99, 5, 5),
-             getBirthdayDetails : function{
+    <script>
 
-             }
+let friend = {
+    name: "John",
+    birthDate: "1999-07-05"
+};
 
-        };
-        document.getElementById("bday").innerHTML=
 
-    </script>
+function getBirthdayDetails(friendObj) {
+    // Convert string to Date object
+    const birth = new Date(friendObj.birthDate);
+
+    // Extract details
+    const year = birth.getFullYear();
+    const day = birth.getDate();
+    const monthName = birth.toLocaleString("default", { month: "long" });
+
+    // Calculate age
+    const today = new Date();
+    let age = today.getFullYear() - year;
+
+    // Check if birthday has passed this year
+    const hasBirthdayPassed =
+        today.getMonth() > birth.getMonth() ||
+        (today.getMonth() === birth.getMonth() && today.getDate() >= day);
+
+    if (!hasBirthdayPassed) {
+        age -= 1;
+    }
+
+
     
-    
+     document.getElementById("bday").innerHTML=`${friendObj.name} was born on ${day} ${monthName}, ${year} and is ${age} years old.`
+}
+
+
+getBirthdayDetails(friend);
+</script>
+
 </body>
 </html>
+
