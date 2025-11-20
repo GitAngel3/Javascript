@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple input system </title>
+</head>
+<body>
+<h2>simple input system for a small game.</h2>
+<p>You are building a simple input system for a small game. The game gives players 5 chances to guess a number between 1 and 5. The game should work like this:
+Ask the player to enter a number between 1 and 5.
+If the number is 3, display: "You guessed it right!" and stop the game.
+If the number is not 3, display: "Wrong guess. Try again."
+If the player enters a number outside the range (not 1 to 5), display "Invalid input" and skip that chance using continue.
+If the player doesn’t guess the correct number within 5 valid chances, display "Game over".
+You must use:
+A loop
+An if-else statement
+A break statement
+A continue statement
+A switch to display the number they entered in words (e.g., 1 = "One")
+</p>
+
+    <script>
+        let correctNumber = 3;
+let validChances = 0; // counts only valid inputs
+
+for (let i = 1; i <= 5; i++) {
+
+    let guess = parseInt(prompt("Enter a number between 1 and 5:"));
+
+    // Check for invalid input (not 1–5)
+    if (guess < 1 || guess > 5 || isNaN(guess)) {
+        console.log("Invalid input");
+        continue;  // skip this chance
+    }
+
+    // Count only valid chances
+    validChances++;
+
+    // SWITCH: convert number to words
+    switch (guess) {
+        case 1: console.log("You entered: One"); break;
+        case 2: console.log("You entered: Two"); break;
+        case 3: console.log("You entered: Three"); break;
+        case 4: console.log("You entered: Four"); break;
+        case 5: console.log("You entered: Five"); break;
+    }
+
+    // Correct guess?
+    if (guess === correctNumber) {
+        console.log("You guessed it right!");
+        break;  // stop the game
+    } else {
+        console.log("Wrong guess. Try again.");
+    }
+
+    // Stop if valid chances reach 5
+    if (validChances === 5) {
+        console.log("Game over");
+        break;
+    }
+}
+
+// If player never guessed correctly and loop finishes
+if (validChances === 5) {
+    console.log("Game over");
+}
+
+
+    </script>
+    
+</body>
+</html>

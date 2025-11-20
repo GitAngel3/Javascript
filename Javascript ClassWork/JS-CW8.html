@@ -42,7 +42,7 @@
     let productName = "";
     let price = 0;
 
-    // Switch to find product and price
+    
     switch (code) {
         case 1:
             productName = "Apple";
@@ -58,10 +58,9 @@
             break;
     }
 
-    // Calculate total
+    
     let total = price * qty;
 
-    // Display result
     alert(
         "Product: " + productName +
         "\nQuantity: " + qty +
@@ -69,7 +68,7 @@
         "\nTotal: ₹" + total
     );
 
-    // Special message using if...else
+    
     if (total > 100) {
         alert("High purchase");
     } else {
