@@ -23,22 +23,22 @@ A switch to display the number they entered in words (e.g., 1 = "One")
 
     <script>
         let correctNumber = 3;
-let validChances = 0; // counts only valid inputs
+let validChances = 0; 
 
 for (let i = 1; i <= 5; i++) {
 
     let guess = parseInt(prompt("Enter a number between 1 and 5:"));
 
-    // Check for invalid input (not 1–5)
+   
     if (guess < 1 || guess > 5 || isNaN(guess)) {
         console.log("Invalid input");
-        continue;  // skip this chance
+        continue;  
     }
 
-    // Count only valid chances
+   
     validChances++;
 
-    // SWITCH: convert number to words
+    
     switch (guess) {
         case 1: console.log("You entered: One"); break;
         case 2: console.log("You entered: Two"); break;
@@ -47,7 +47,7 @@ for (let i = 1; i <= 5; i++) {
         case 5: console.log("You entered: Five"); break;
     }
 
-    // Correct guess?
+
     if (guess === correctNumber) {
         console.log("You guessed it right!");
         break;  // stop the game
@@ -55,14 +55,13 @@ for (let i = 1; i <= 5; i++) {
         console.log("Wrong guess. Try again.");
     }
 
-    // Stop if valid chances reach 5
     if (validChances === 5) {
         console.log("Game over");
         break;
     }
 }
 
-// If player never guessed correctly and loop finishes
+
 if (validChances === 5) {
     console.log("Game over");
 }
