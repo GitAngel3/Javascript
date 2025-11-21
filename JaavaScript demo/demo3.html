@@ -1,22 +1,45 @@
-
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo</title>
+</head>
 <body>
+  <h3>Eg for Button named'Click here'</h3>
+  <button type="button" onclick="document.write('Thanks for clicking-Start your program in JS')">Click Here</button>
+  <p id="aritmetic">Arithmetic egs.</p>
 
-<p id="demo"></p>
 
-<script>
-let number = prompt("Enter a number: ");
+<script language="javascript" type="text/javascript">
 
-// check if number is greater than 0
-if (number > 0) {
- // the body of the if statement
-  console.log("The number is positive");
-}
+  let a=8,b=6;
+  
+    let sum= a+b;
+    const mulp = a*b;
+    let divi= a/b;
+    let remind= a%b;
+    let pow= a**b;
+    let p=a++
+    q=++a;
 
-console.log("The if statement is easy");
-</script>
+  
+   window.alert('This is my first alert box!');
+    document.getElementById("aritmetic").innerHTML= ("sum of a and b:"+sum+'product of a and b:'+mulp+'divided out of a and b:'+divi+'modulus of a and b:'+remind+'a to the power b:'+pow +'increment of a:'+p+'prefix increment operator'+q)
+   
+    alert('alert()too works');
+    console.log('1st display inside console');
+    function sayHello() {
+alert("Hello, I am a Script inside the <head> tag.")}
+  console.log(sayHello);
+  
+
+
+  </script>
+  <noscript>
+Sorry, Your browser does not support JavaScript!
+</noscript>
 
 </body>
+
 </html>
