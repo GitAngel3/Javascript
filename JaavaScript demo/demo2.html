@@ -4,14 +4,34 @@
 <!DOCTYPE html>
 <html>
 <body>
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Error Handling</h2>
+
+<p>This example demonstrates how to use <b>catch</b> to diplay an error.</p>
+
 <p id="demo"></p>
+
 <script>
+try {
+  adddlert("Welcome Mashupstack!");
+}
+catch(err) {
+  alert(err.name); // ReferenceError
+  alert(err.message); // lalala is not defined
+  alert(err.stack); // ReferenceError: lalala is not defined at (...call stack)
 
-elem = document.getElementById("demo"); // Find an element 
-elem.innerHTML = x;           // Display x in the element
-
-var x=5; // Declare x
+  // Can also show an error as a whole
+  // The error is converted to string as "name: message"
+  alert(err); // ReferenceError: lalala is not defined
+}
 </script>
+
+</body>
+</html>
 
 </body>
 </html>
