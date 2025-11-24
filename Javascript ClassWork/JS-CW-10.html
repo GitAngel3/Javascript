@@ -19,11 +19,31 @@
 </body>
 <script lang="javascript" type="text/javascript">
 
-    let user = {
-        name: "Angeleena",
-        email: "ang@gmail.com",
-        message: "Hi",
-    }
+    
+
+const jsonText = `
+{
+  "name": "Angel",
+  "email": "angel@gmail.com",
+  "message": "Hello, this is a message."
+}
+`;
+
+
+const handleMessage = () => {
+  try {
+   
+    const data = JSON.parse(jsonText);
+
+  
+    console.log(`Message received from ${data.name}`);
+  } catch (error) {
+  
+    console.error("Error: Could not process the JSON data.", error.message);
+  }
+};
+
+handleMessage();
 
 </script>
 
