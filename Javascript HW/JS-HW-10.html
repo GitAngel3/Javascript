@@ -31,16 +31,16 @@ Use try-catch to handle any error if the JSON is invalid.
 `;
 
 try {
-  t
+  // 1. Convert JSON string into usable format
   const feedback = JSON.parse(jsonString);
 
-  
+  // 2. Named arrow function to check for "thank" (case-insensitive)
   const containsThank = (feedbackObj => {
     const text = feedbackObj.message || "";
     return /thank/i.test(text);
   });
 
- 
+  // 3. Check message content and display result
   if (containsThank(feedback)) {
     console.log("Positive feedback received");
   } else {
@@ -48,7 +48,7 @@ try {
   }
 
 } catch (error) {
- 
+  // 4. Error handling for invalid JSON
   console.error("Invalid JSON:", error.message);
 }
 

@@ -1,55 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Groceryshop-calculator</title>
+    <title>simple calculator</title>
 </head>
+
 <body>
-    <p id="bill"></p>
-    <script language="javascript" type="text/javascript">
-       
-var item1 = "Rice";
-var item2 = "Sugar";
-var item3 = "Wheat";
+    <h2>simple calculator for a small grocery shop</h2>
+    <p>You are designing a simple calculator for a small grocery shop.
+        The shop sells three items: rice, sugar, and wheat.
+        Your task is to:
+        Create variables for the item names, prices, and quantities purchased.
+        Calculate and display the cost for each item (price × quantity).
+        Calculate the total bill for the customer.
+        Change the quantity of one item and recalculate the total.
+        Display the updated total bill.
+        Use only what you’ve learned today, and make sure to follow variable naming rules.
+        Output all the values using
+        console.log().</p>
+    <p id="cost"></p>
 
-// Prices of items (per kg)
-var priceRice = 60;
-var priceSugar = 45;
-var priceWheat = 55;
-
-// Quantities purchased (in kg)
-var qtyRice = 2;
-var qtySugar = 3;
-var qtyWheat = 4;
-
-// Calculate cost for each item
-var costRice = priceRice * qtyRice;
-var costSugar = priceSugar * qtySugar;
-var costWheat = priceWheat * qtyWheat;
-
-// Display item costs
-console.log("Cost of " + item1 + ": ₹" + costRice);
-console.log("Cost of " + item2 + ": ₹" + costSugar);
-console.log("Cost of " + item3 + ": ₹" + costWheat);
-
-// Calculate total bill
-let totalBill = costRice + costSugar + costWheat;
-console.log("Total Bill: ₹" + totalBill);
-
-// Change quantity of one item (e.g., Rice)
-qtyRice = 3; // customer buys 1 kg more
-
-// Recalculate cost and total
-costRice = priceRice * qtyRice;
-totalBill = costRice + costSugar + costWheat;
-
-// Display updated total
-console.log("Updated quantity of " + item1 + ": " + qtyRice + " kg");
-console.log("Updated Total Bill: ₹" + totalBill);
-
-
-    </script>
-    
 </body>
+<script>
+    var itm1 = "rice";
+    var itm2 = "sugar";
+    let itm3 = "wheat";
+    let p1 = 58;
+    let p2 = 50;
+    let p3 = 45;
+    let q1 = 7
+    let q2 = 5
+    let q3 = 6
+    let cos1 = p1 * q1;
+    let cos2 = p2 * q2
+    let cos3 = p3 * q3
+
+
+    console.log("Cost of " + itm1 + ": ₹" + cos1);
+    console.log("Cost of " + itm2 + ": ₹" + cos2);
+    console.log("Cost of " + itm3 + ": ₹" + cos3);
+
+    let totalBill = cos1 + cos2 + cos3;
+    console.log("Total Bill: ₹" + totalBill);
+
+
+    qtyRice = 3;
+
+    cos1 = p1 * qtyRice;
+    totalBill = cos1 + cos2 + cos3;
+
+    console.log("Updated quantity of " + itm1 + ": " + qtyRice + " kg");
+    console.log("Updated Total Bill: ₹" + totalBill);
+
+
+</script>
+
 </html>

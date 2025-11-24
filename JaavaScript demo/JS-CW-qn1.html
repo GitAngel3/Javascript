@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>online store </title>
+</head>
+
+<body>
+    <h2>Sales track</h2>
+    <p>You are helping a small online store keep track of its sales.
+        The store sold 5 t-shirts, each for ₹400, and 3 caps, each for ₹150.
+        Your task is to:
+        Create variables to store the number of items sold and their prices.
+        Calculate the total earnings from the sales.
+        Display the total earnings.
+        Change the price of the t-shirts to ₹450 and recalculate the total earnings.
+        Print the updated total.</p>
+        <p id="sale"></p>
+        <script lang="javascript" type="text/javascript">
+            var obj1= 5;
+            var p1= 400;
+            var obj2= 3;
+            var p2= 150;
+            var earnings= obj1*p1+obj2*p2;
+            document.getElementById("sale").innerHTML='Total Earning='+earnings
+
+        </script>
+
+</body>
+
+</html>
