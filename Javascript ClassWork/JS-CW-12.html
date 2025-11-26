@@ -8,12 +8,12 @@
    
     <style>
         #output {
-            color: blue;   /* Default color */
+            color: blue;   
             transition: color 0.2s ease;
         }
 
         #output:hover {
-            color: green;  /* Hover color */
+            color: green; 
         }
     </style>
 </head>
@@ -40,7 +40,7 @@
         const output = document.getElementById("output");
 
         form.addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent page reload
+            event.preventDefault(); 
             output.textContent = input.value;
         });
     </script>
