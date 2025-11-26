@@ -1,29 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>simple library system</title>
 </head>
+
 <body>
+    <h2>Building a simple library system</h2>
+    <p>You are building a simple library system. Each book has a title,
+        an author, and a year of publication. You want to create a small
+        program that stores a book's details and provides a method to display
+        its information in a neat sentence.
+
+        Your task:
+
+        Create an <B>object named book</B> with properties: title, author, and year.
+
+        Inside the object, add a method called getSummary that returns a sentence like:
+        "The book 'The Alchemist' was written by Paulo Coelho in 1988."
+
+        Write a function called printBookSummary(bookObj) that takes the book object
+         as a parameter and displays the
+        book summary using the method.
+
+
+
+    </p>
     <script lang="javascript" type="text/javascript">
         let book={
-            title:'Wings of fire',
-            author:'Dr. APJ. Abdul Kalam',
-            year: 1999,
-            getSummary:function(){
-             document.write('The book'+ title+ 'was written by'+ author+'in'+ year)
+            title: 'All the Way to the River',
+            author:'Elizbeth Gilbert',
+            year:2025
+             getSummaru(){
+                return(this.title+'was written by'+this.author+'in'+this.year)
+
             }
-         }
-         let summary={
-            
-            
 
-         }
-         book.getsummary();
 
+        }
 
     </script>
-    
+
 </body>
+
 </html>
