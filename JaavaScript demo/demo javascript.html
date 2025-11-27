@@ -1,30 +1,33 @@
 
+
 <!DOCTYPE html>
 <html>
+<head>
+    <title>Reverse String</title>
+</head>
 <body>
 
-<h2>JavaScript "this"</h2>
+<h2>Reverse a String</h2>
 
-<p>This example demonstrate that in a regular function, the "this" keyword represents different objects depending on how the function was called.</p>
+<form onsubmit="reverseString(event)">
+    <input type="text" id="userInput" placeholder="Enter a string" required>
+    <button type="submit">Reverse</button>
+</form>
 
-<p>Click the button to execute the "hello" function again, and you will see that this time "this" represents the button object.</p>
-
-<button id="btn">Click Me!</button>
-
-<p id="demo"></p>
+<p><strong>Reversed String:</strong> <span id="result"></span></p>
 
 <script>
-var func;
+function reverseString(event) {
+    event.preventDefault(); // Prevent form from reloading the page
 
-func = function() {
-  document.getElementById("demo").innerHTML += this;
+    let str = document.getElementById("userInput").value;
+
+    // Reverse the string
+    let reversed = str.split("").reverse().join("");
+
+    // Display output
+    document.getElementById("result").textContent = reversed;
 }
-
-//The window object calls the function:
-window.addEventListener("load", func);
-
-//A button object calls the function:
-document.getElementById("btn").addEventListener("click", func);
 </script>
 
 </body>
