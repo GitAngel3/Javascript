@@ -1,8 +1,9 @@
 
 
 
-document.getElementById("button").addEventListener("click",function(){
- document.getElementById('Display').style.backgroundColor='Black';
+document.getElementById("btn").addEventListener("click",function(){
+ 
+  document.body.style.backgroundColor = "Black";
 }
 )
 

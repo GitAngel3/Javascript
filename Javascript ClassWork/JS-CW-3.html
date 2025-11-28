@@ -1,32 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>feedback form</title>
 </head>
+
 <body>
-    <script>
-        var feedback = "   I loved the FOOD and the service!   ";
+    <P>You are helping to build a feedback form for a basic website. When a user submits feedback, you receive a string
+        that may contain extra spaces and mixed cases. Your task is to clean and process the feedback string so it can
+        be stored or displayed neatly.var feedback = " I loved the FOOD and the service! ";Perform the following
+        actions:
+        Remove extra spaces at the beginning and end of the string.Convert the entire string to lowercase.
+        Replace the word "food" with "ambience".
+        Find and print the position of the word "service".
+        Finally, convert the string to an array of words and print the array.
 
-// 1. Remove extra spaces at the beginning and end
-feedback = feedback.trim();
+    </P>
 
-// 2. Convert the entire string to lowercase
-feedback = feedback.toLowerCase();
+    <button onclick="prevFn()">Click here to display initial string </button>
+    <button onclick="myStrng()">Click here to get string with removed spaces</button>
+    <button onclick="lowCas()">Click here to get string with lowercase</button>
 
-// 3. Replace the word "food" with "ambience"
-feedback = feedback.replace("food", "ambience");
 
-// 4. Find and print the position of the word "service"
-var position = feedback.indexOf("service");
-console.log("Position of 'service':", position);
 
-// 5. Convert the string to an array of words and print the array
-var wordsArray = feedback.split(" ");
-console.log(wordsArray);
+    <script lang="JavaScript" type="text/JavaScript">
+        function prevFn(){    let x = "   I loved the FOOD and the service!   ";
+             console.log(x)  
+    }
+
+function myStrng(params) {
+    var str = "   I loved the FOOD and the service!   ";
+ console.log(str.trim());
+                
+    }
+
+    function lowCas(params) {
+    var str = "I loved the FOOD and the service!";
+ console.log(str.toLowerCase());
+                
+    }
+
+    function myStrng(params) {
+    var str = "   I loved the FOOD and the service!   ";
+ console.log(str.trim());
+                
+    }
 
     </script>
-    
+
 </body>
+
 </html>
