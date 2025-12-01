@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+
+<body>
+    <h2>Calculator</h2>
+
+    <input type="number" id="no1" placeholder="Enter first number" required><br><br>
+
+    <select id="operator">
+        <option value="sum"> + </option>
+        <option value="subtract"> − </option>
+        <option value="multiply"> × </option>
+        <option value="divide"> ÷ </option>
+    </select><br><br>
+
+    <input type="number" id="no2" placeholder="Enter Second number" required>
+
+    <button onclick="equalSign()">=</button>
+
+    <p id="cal"></p>
+
+
+
+    <script lang="javascript" type="text/javascript">
+
+
+
+        //addition
+        function addNumbers(n1, n2) {
+            var a = n1;
+            var b = n2;
+            var sum = a + b;
+            return sum;
+        }
+
+        //subtraction
+        function subNumbers(n1, n2) {
+            let a = n1;
+            let b = n2;
+            let diff = a - b;
+            return diff;
+        }
+
+
+        //multiply
+        function mulNumbers(n1, n2) {
+            let a = n1;
+            let b = n2;
+            let mul = a * b;
+            return mul;
+        }
+
+        //division
+        function divNumbers(n1, n2) {
+            let a = n1;
+            let b = n2;
+            let div = a / b;
+            return div;
+        }
+
+        function equalSign() {
+
+            let n1 = parseFloat(document.getElementById("no1").value);
+            let n2 = parseFloat(document.getElementById("no2").value);
+            let x = document.getElementById("operator").value;
+
+            let result;
+            switch (x) {
+                case "sum":
+                    result = addNumbers(n1, n2);
+                    break;
+
+                case "subtract":
+                    result = subNumbers(n1, n2);
+                    break;
+
+                case "multiply":
+                    result = mulNumbers(n1, n2);
+                    break;
+                case "divide":
+                    result = divNumbers(n1, n2);
+                    break;
+
+            }
+            function printResult(result) {
+                document.getElementById("cal").innerHTML = "The result is:" + "<br>" + result;
+            }
+
+            printResult(result);
+
+
+        }
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
