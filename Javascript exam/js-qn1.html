@@ -5,6 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
+    <style>
+
+        body {
+            margin: 60px;
+            border: 6px solid color( rgb(13, 13, 13));
+            background-color: rgb(197, 146, 244);
+            text-align: center;
+        
+        
+           
+        }
+        .calc-box {
+            width: 80px;
+            padding: 15px;
+            border: 1px solid #918dba;
+        }
+        input, select, button {
+            width: 30%;
+            padding: 6px;
+            margin-top: 8px;
+        }
+    </style>
 </head>
 
 <body>
@@ -19,12 +41,11 @@
         <option value="divide"> ÷ </option>
     </select><br><br>
 
-    <input type="number" id="no2" placeholder="Enter Second number" required>
+    <input type="number" id="no2" placeholder="Enter Second number" required><br><br>
 
     <button onclick="equalSign()">=</button>
 
     <p id="cal"></p>
-
 
 
     <script lang="javascript" type="text/javascript">
@@ -58,10 +79,8 @@
 
         //division
         function divNumbers(n1, n2) {
-            let a = n1;
-            let b = n2;
-            let div = a / b;
-            return div;
+            if (n2 === 0) return "Error: Cannot divide by zero";
+            return n1 / n2;
         }
 
         function equalSign() {
@@ -69,6 +88,7 @@
             let n1 = parseFloat(document.getElementById("no1").value);
             let n2 = parseFloat(document.getElementById("no2").value);
             let x = document.getElementById("operator").value;
+            
 
             let result;
             switch (x) {
@@ -89,7 +109,7 @@
 
             }
             function printResult(result) {
-                document.getElementById("cal").innerHTML = "The result is:" + "<br>" + result;
+                document.getElementById("cal").innerHTML = "The result is:" + "<br>" + result.toFixed(2);
             }
 
             printResult(result);

@@ -1,65 +1,126 @@
-
-
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+
+        body {
+            font-family: Arial;
+            margin: 40px;
+            background-color: rgb(197, 146, 244);
+        }
+        .calc-box {
+            width: 50px;
+            padding: 15px;
+            border: 1px solid #ccc;
+        }
+        input, select, button {
+            width: 30%;
+            padding: 6px;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+
 <body>
+    <h2>Calculator</h2>
 
-<!DOCTYPE html>
-<html>
-<body>
+    <input type="number" id="no1" placeholder="Enter first number" required><br><br>
 
-<h2>JavaScript Error Handling</h2>
+    <select id="operator">
+        <option value="sum"> + </option>
+        <option value="subtract"> − </option>
+        <option value="multiply"> × </option>
+        <option value="divide"> ÷ </option>
+    </select><br><br>
 
-<p>This example demonstrates how to use <b>catch</b> to diplay an error.</p>
+    <input type="number" id="no2" placeholder="Enter Second number" required>
 
-<p id="demo"></p>
+    <button onclick="equalSign()">=</button>
 
-<script>
-class Book
-    def __init__(self, title, author, price):
-        self.title = title
-        self.author = author
-        self.price = price
+    <p id="cal"></p>
 
-    // Getter methods
-    def get_title(self):
-        return self.title
 
-    def get_author(self):
-        return self.author
+    <script lang="javascript" type="text/javascript">
 
-    // Setter method for price
-    def set_price(self, new_price):
-        if isinstance(new_price, (int, float)) and new_price > 0:
-            self.price = new_price
-            print(f"Price updated to {new_price}")
-        else:
-            print("Invalid price! Price must be a positive number.")
 
-    # To print book details nicely
-    def __str__(self):
-        return f"Title: {self.title}, Author: {self.author}, Price: ${self.price}"
-        
 
-//--- Testing the Book class ---
+        //addition
+        function addNumbers(n1, n2) {
+            var a = n1;
+            var b = n2;
+            var sum = a + b;
+            return sum;
+        }
 
-book1 = Book("1984", "George Orwell", 15.99)
+        //subtraction
+        function subNumbers(n1, n2) {
+            let a = n1;
+            let b = n2;
+            let diff = a - b;
+            return diff;
+        }
 
-//Try updating with an invalid value
-book1.set_price(-10)     # Invalid
-book1.set_price("free")  # Invalid
 
-// Try updating with a valid value
-book1.set_price(20.50)   # Valid
+        //multiply
+        function mulNumbers(n1, n2) {
+            let a = n1;
+            let b = n2;
+            let mul = a * b;
+            return mul;
+        }
 
-//Print final book details
-print(book1)
+        //division
+        function divNumbers(n1, n2) {
+            let a = n1;
+            let b = n2;
+            let div = a / b;
+             if (b === 0) return "Error: Cannot divide by zero";
+            return div;
+        }
 
-</script>
+        function equalSign() {
+
+            let n1 = parseFloat(document.getElementById("no1").value);
+            let n2 = parseFloat(document.getElementById("no2").value);
+            let x = document.getElementById("operator").value;
+
+            let result;
+            switch (x) {
+                case "sum":
+                    result = addNumbers(n1, n2);
+                    break;
+
+                case "subtract":
+                    result = subNumbers(n1, n2);
+                    break;
+
+                case "multiply":
+                    result = mulNumbers(n1, n2);
+                    break;
+                case "divide":
+                    result = divNumbers(n1, n2);
+                    break;
+
+            }
+            function printResult(result) {
+                document.getElementById("cal").innerHTML = "The result is:" + "<br>" + result;
+            }
+
+            printResult(result);
+
+
+        }
+
+
+
+
+
+    </script>
 
 </body>
-</html>
 
-</body>
 </html>

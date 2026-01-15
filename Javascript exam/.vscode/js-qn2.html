@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lottery Draw</title>
+    <style>
+        body {
+            margin: 60px;
+            border: 6px solid color( rgb(13, 13, 13));
+            background-color: rgb(162, 253, 176);
+            text-align: center;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <h2>Lottery Drawing Machine</h2>
+    <button id="btn" onclick="document.getElementById('lot').innerHTML = 'The winner is: ' + getRandomValue(numberLot)"
+        style="color: green;">Click to Select the Winner</button>
+
+
+    <button id="openModalBtn" class="btn btn-primary"></button>  
+
+
+    <h3 id="lot" style="color: red;"></h3>
+    
+
+    <script lang="javascript" type="text/javascript">
+        let numberLot = [10111, 10112, 10113, 10114, 10115, 10116, 10117, 10118, 10119, 10120]
+
+       
+
+           
+        function getRandomValue(numberLot) {
+
+            let winner = numberLot[Math.floor(Math.random() * numberLot.length)];
+
+            console.log('The winner is: ' + winner);
+
+            window.alert('The winner is: ' + winner);
+
+            return winner;
+
+
+        }
+
+
+
+
+    </script>
+
+</body>
+
+</html>

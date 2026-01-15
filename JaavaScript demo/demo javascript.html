@@ -1,34 +1,79 @@
-
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Reverse String</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lottery Draw</title>
 </head>
+
 <body>
+    <h2>Lottery Drawing Machine</h2>
+    <button class="btn btn-primary" id="btn"
+        onclick="document.getElementById('lot').innerHTML = 'The winner is: ' + getRandomValue(numberLot)"
+        style="color: green;">Click to Select the
+        Winner</button>
 
-<h2>Reverse a String</h2>
 
-<form onsubmit="reverseString(event)">
-    <input type="text" id="userInput" placeholder="Enter a string" required>
-    <button type="submit">Reverse</button>
-</form>
 
-<p><strong>Reversed String:</strong> <span id="result"></span></p>
 
-<script>
-function reverseString(event) {
-    event.preventDefault(); // Prevent form from reloading the page
+    <h2 id="lot" style="color: red;"></h2>
 
-    let str = document.getElementById("userInput").value;
 
-    // Reverse the string
-    let reversed = str.split("").reverse().join("");
+    <h3 id="winnerText" class="mt-3 text-danger"></h3>
 
-    // Display output
-    document.getElementById("result").textContent = reversed;
-}
-</script>
+ 
+    <div class="modal fade" id="winnerModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <h5 class="modal-title">Lottery Winner</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+
+          <div class="modal-body">
+            <h4 id="modalWinner" class="text-success"></h4>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <script lang="javascript" type="text/javascript">
+        let numberLot = [10111, 10112, 10113, 10114, 10115, 10116, 10117, 10118, 10119, 10120]
+
+
+
+
+        function getRandomValue(numberLot) {
+
+            let winner = numberLot[Math.floor(Math.random() * numberLot.length)];
+
+            console.log('The winner is: ' + winner);
+
+            document.getElementById("modalWinner").innerText = winner;
+
+
+            modal.show();
+
+            return winner;
+
+            document.getElementById("modalWinner").innerText = winner;
+
+      
+                document.getElementById("modalResult").innerHTML = "<h3 style='color:red;'>" + result + "</h3>";
+
+   
+    var myModal = new bootstrap.Modal(document.getElementById("winnerModal"));
+    myModal.show();
+        
+
+    </script>
 
 </body>
+
 </html>
