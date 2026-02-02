@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Print Form Element</title>
+</head>
+<body>
+
+    <p>This page contains a paragraph and a form.</p>
+
+    <form>
+        <input type="text" id="name" placeholder="Enter your name">
+        <br><br>
+        <button type="button" onclick="printFormData()">Submit</button>
+    </form>
+
+    <p id="output"></p>
+
+    <script>
+        function printFormData() {
+            // Get form input value
+            let value = document.getElementById("name").value;
+
+            // Print in console
+            console.log(value);
+
+            // Print on HTML page
+            document.getElementById("output").innerText = value;
+        }
+    </script>
+
+</body>
+</html>

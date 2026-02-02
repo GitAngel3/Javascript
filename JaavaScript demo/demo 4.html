@@ -1,24 +1,30 @@
 
 
-let num = parseInt(prompt("Enter a number:"));
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Print Paragraph Content</title>
+</head>
+<body>
 
-let isPrime = true;
+    <p id="myPara">This is a sample paragraph content.</p>
 
-if (num <= 1) {
-    isPrime = false;
-}
+    <button onclick="printParagraph()">Click Me</button>
 
-for (let i = 2; i < num; i++) {
-    if (num % i === 0) {
-        isPrime = false;
-        break;
-    }
-}
+    <p id="output"></p>
 
-if (isPrime) {
-    console.log(num + " is a Prime Number");
-    document.write(num + " is a Prime Number");
-} else {
-    console.log(num + " is NOT a Prime Number");
-    document.write(num + " is NOT a Prime Number");
-}
+    <script>
+        function printParagraph() {
+            // Get paragraph text
+            let text = document.getElementById("myPara").innerText;
+
+            // Print in console
+            console.log(text);
+
+            // Print on HTML page
+            document.getElementById("output").innerText = text;
+        }
+    </script>
+
+</body>
+</html>
